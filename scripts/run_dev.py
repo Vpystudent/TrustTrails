@@ -11,7 +11,9 @@ def run():
     b_proc = subprocess.Popen(backend_cmd, cwd=root)
     
     print("Starting frontend...")
-    f_proc = subprocess.Popen(frontend_cmd, cwd=os.path.join(root, "frontend"))
+    # On Windows, npm is a .cmd file so we need shell=True
+    is_windows = sys.platform.startswith('win')
+    f_proc = subprocess.Popen(frontend_cmd, cwd=os.path.join(root, "frontend"), shell=is_windows)
     
     try:
         b_proc.wait()
