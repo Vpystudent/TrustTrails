@@ -1,0 +1,77 @@
+{
+  "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+  "address_type": "contract",
+  "chains": [
+    "ethereum"
+  ],
+  "overall_risk": "low",
+  "score": 8,
+  "points": [
+    {
+      "signal_id": "owner_privileges",
+      "points": 7.5,
+      "reason": "Fired 1 time(s) with max severity medium."
+    }
+  ],
+  "signals": [
+    {
+      "signal_id": "owner_privileges",
+      "severity": "medium",
+      "score": 0.75,
+      "chain": "ethereum",
+      "title": "Owner Privileges",
+      "evidence": [
+        {
+          "tx_hash": "",
+          "block": 0,
+          "detail": "Owner 0xfcb19e6a322b27c06842a71e8c725399f049ae3a is an EOA."
+        }
+      ],
+      "rule": "single key controls this contract."
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "label": "0xa0b8...eb48",
+        "type": "target"
+      },
+      {
+        "id": "0xfcb19e6a322b27c06842a71e8c725399f049ae3a",
+        "label": "0xfcb1...ae3a",
+        "type": "contract"
+      }
+    ],
+    "edges": [
+      {
+        "source": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "target": "0xfcb19e6a322b27c06842a71e8c725399f049ae3a",
+        "label": "Owner Privileges"
+      }
+    ]
+  },
+  "summary": "Owner Privileges. 1 piece(s) of evidence found. Review the evidence below.",
+  "summary_status": "disabled",
+  "history_truncated": false,
+  "warnings": [],
+  "generated_at": "2026-09-19T20:39:34.238606+00:00",
+  "cache": {
+    "hit": false,
+    "saved_at": "2026-09-19T20:39:34.238606+00:00"
+  },
+  "coverage": {
+    "chains": {
+      "ethereum": {
+        "transactions": 0,
+        "token_transfers": 0,
+        "first_seen": null,
+        "last_seen": null,
+        "truncated": false,
+        "ok": true
+      }
+    }
+  },
+  "approvals": [],
+  "timeline": []
+}

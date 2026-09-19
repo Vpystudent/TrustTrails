@@ -1,0 +1,1689 @@
+{
+  "address": "0x6666666666666666666666666666666666666666",
+  "chains": [
+    "ethereum"
+  ],
+  "signals": [
+    {
+      "signal_id": "massive_laundering_ring",
+      "chain": "ethereum",
+      "severity": "high",
+      "title": "Massive Money Laundering Ring",
+      "rule": "Address exhibits extreme wash-trading and mixing topology.",
+      "evidence": [
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc0",
+          "block": 15000000,
+          "counterparty": "0x0000000000000000000000000000000000000000"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc1",
+          "block": 15000001,
+          "counterparty": "0x0000000000000000000000000000000000000001"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc2",
+          "block": 15000002,
+          "counterparty": "0x0000000000000000000000000000000000000002"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc3",
+          "block": 15000003,
+          "counterparty": "0x0000000000000000000000000000000000000003"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc4",
+          "block": 15000004,
+          "counterparty": "0x0000000000000000000000000000000000000004"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc5",
+          "block": 15000005,
+          "counterparty": "0x0000000000000000000000000000000000000005"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc6",
+          "block": 15000006,
+          "counterparty": "0x0000000000000000000000000000000000000006"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc7",
+          "block": 15000007,
+          "counterparty": "0x0000000000000000000000000000000000000007"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc8",
+          "block": 15000008,
+          "counterparty": "0x0000000000000000000000000000000000000008"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc9",
+          "block": 15000009,
+          "counterparty": "0x0000000000000000000000000000000000000009"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc10",
+          "block": 15000010,
+          "counterparty": "0x000000000000000000000000000000000000000a"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc11",
+          "block": 15000011,
+          "counterparty": "0x000000000000000000000000000000000000000b"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc12",
+          "block": 15000012,
+          "counterparty": "0x000000000000000000000000000000000000000c"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc13",
+          "block": 15000013,
+          "counterparty": "0x000000000000000000000000000000000000000d"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc14",
+          "block": 15000014,
+          "counterparty": "0x000000000000000000000000000000000000000e"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc15",
+          "block": 15000015,
+          "counterparty": "0x000000000000000000000000000000000000000f"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc16",
+          "block": 15000016,
+          "counterparty": "0x0000000000000000000000000000000000000010"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc17",
+          "block": 15000017,
+          "counterparty": "0x0000000000000000000000000000000000000011"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc18",
+          "block": 15000018,
+          "counterparty": "0x0000000000000000000000000000000000000012"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc19",
+          "block": 15000019,
+          "counterparty": "0x0000000000000000000000000000000000000013"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc20",
+          "block": 15000020,
+          "counterparty": "0x0000000000000000000000000000000000000014"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc21",
+          "block": 15000021,
+          "counterparty": "0x0000000000000000000000000000000000000015"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc22",
+          "block": 15000022,
+          "counterparty": "0x0000000000000000000000000000000000000016"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc23",
+          "block": 15000023,
+          "counterparty": "0x0000000000000000000000000000000000000017"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc24",
+          "block": 15000024,
+          "counterparty": "0x0000000000000000000000000000000000000018"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc25",
+          "block": 15000025,
+          "counterparty": "0x0000000000000000000000000000000000000019"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc26",
+          "block": 15000026,
+          "counterparty": "0x000000000000000000000000000000000000001a"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc27",
+          "block": 15000027,
+          "counterparty": "0x000000000000000000000000000000000000001b"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc28",
+          "block": 15000028,
+          "counterparty": "0x000000000000000000000000000000000000001c"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc29",
+          "block": 15000029,
+          "counterparty": "0x000000000000000000000000000000000000001d"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc30",
+          "block": 15000030,
+          "counterparty": "0x000000000000000000000000000000000000001e"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc31",
+          "block": 15000031,
+          "counterparty": "0x000000000000000000000000000000000000001f"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc32",
+          "block": 15000032,
+          "counterparty": "0x0000000000000000000000000000000000000020"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc33",
+          "block": 15000033,
+          "counterparty": "0x0000000000000000000000000000000000000021"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc34",
+          "block": 15000034,
+          "counterparty": "0x0000000000000000000000000000000000000022"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc35",
+          "block": 15000035,
+          "counterparty": "0x0000000000000000000000000000000000000023"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc36",
+          "block": 15000036,
+          "counterparty": "0x0000000000000000000000000000000000000024"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc37",
+          "block": 15000037,
+          "counterparty": "0x0000000000000000000000000000000000000025"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc38",
+          "block": 15000038,
+          "counterparty": "0x0000000000000000000000000000000000000026"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc39",
+          "block": 15000039,
+          "counterparty": "0x0000000000000000000000000000000000000027"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc40",
+          "block": 15000040,
+          "counterparty": "0x0000000000000000000000000000000000000028"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc41",
+          "block": 15000041,
+          "counterparty": "0x0000000000000000000000000000000000000029"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc42",
+          "block": 15000042,
+          "counterparty": "0x000000000000000000000000000000000000002a"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc43",
+          "block": 15000043,
+          "counterparty": "0x000000000000000000000000000000000000002b"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc44",
+          "block": 15000044,
+          "counterparty": "0x000000000000000000000000000000000000002c"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc45",
+          "block": 15000045,
+          "counterparty": "0x000000000000000000000000000000000000002d"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc46",
+          "block": 15000046,
+          "counterparty": "0x000000000000000000000000000000000000002e"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc47",
+          "block": 15000047,
+          "counterparty": "0x000000000000000000000000000000000000002f"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc48",
+          "block": 15000048,
+          "counterparty": "0x0000000000000000000000000000000000000030"
+        },
+        {
+          "detail": "Interacted with known mixer",
+          "tx_hash": "0xabc49",
+          "block": 15000049,
+          "counterparty": "0x0000000000000000000000000000000000000031"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef0",
+          "block": 14000000,
+          "counterparty": "0x1111111111111111111111111111111111110000"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef1",
+          "block": 14000001,
+          "counterparty": "0x1111111111111111111111111111111111110001"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef2",
+          "block": 14000002,
+          "counterparty": "0x1111111111111111111111111111111111110002"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef3",
+          "block": 14000003,
+          "counterparty": "0x1111111111111111111111111111111111110003"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef4",
+          "block": 14000004,
+          "counterparty": "0x1111111111111111111111111111111111110004"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef5",
+          "block": 14000005,
+          "counterparty": "0x1111111111111111111111111111111111110005"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef6",
+          "block": 14000006,
+          "counterparty": "0x1111111111111111111111111111111111110006"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef7",
+          "block": 14000007,
+          "counterparty": "0x1111111111111111111111111111111111110007"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef8",
+          "block": 14000008,
+          "counterparty": "0x1111111111111111111111111111111111110008"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef9",
+          "block": 14000009,
+          "counterparty": "0x1111111111111111111111111111111111110009"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef10",
+          "block": 14000010,
+          "counterparty": "0x111111111111111111111111111111111111000a"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef11",
+          "block": 14000011,
+          "counterparty": "0x111111111111111111111111111111111111000b"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef12",
+          "block": 14000012,
+          "counterparty": "0x111111111111111111111111111111111111000c"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef13",
+          "block": 14000013,
+          "counterparty": "0x111111111111111111111111111111111111000d"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef14",
+          "block": 14000014,
+          "counterparty": "0x111111111111111111111111111111111111000e"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef15",
+          "block": 14000015,
+          "counterparty": "0x111111111111111111111111111111111111000f"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef16",
+          "block": 14000016,
+          "counterparty": "0x1111111111111111111111111111111111110010"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef17",
+          "block": 14000017,
+          "counterparty": "0x1111111111111111111111111111111111110011"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef18",
+          "block": 14000018,
+          "counterparty": "0x1111111111111111111111111111111111110012"
+        },
+        {
+          "detail": "Received funds from exploited contract",
+          "tx_hash": "0xdef19",
+          "block": 14000019,
+          "counterparty": "0x1111111111111111111111111111111111110013"
+        },
+        {
+          "detail": "Deployed malicious contract",
+          "tx_hash": "0x1230",
+          "block": 16000000,
+          "counterparty": "0x2222222222222222222222222222222222220000"
+        },
+        {
+          "detail": "Deployed malicious contract",
+          "tx_hash": "0x1231",
+          "block": 16000001,
+          "counterparty": "0x2222222222222222222222222222222222220001"
+        },
+        {
+          "detail": "Deployed malicious contract",
+          "tx_hash": "0x1232",
+          "block": 16000002,
+          "counterparty": "0x2222222222222222222222222222222222220002"
+        },
+        {
+          "detail": "Deployed malicious contract",
+          "tx_hash": "0x1233",
+          "block": 16000003,
+          "counterparty": "0x2222222222222222222222222222222222220003"
+        },
+        {
+          "detail": "Deployed malicious contract",
+          "tx_hash": "0x1234",
+          "block": 16000004,
+          "counterparty": "0x2222222222222222222222222222222222220004"
+        },
+        {
+          "detail": "Deployed malicious contract",
+          "tx_hash": "0x1235",
+          "block": 16000005,
+          "counterparty": "0x2222222222222222222222222222222222220005"
+        },
+        {
+          "detail": "Deployed malicious contract",
+          "tx_hash": "0x1236",
+          "block": 16000006,
+          "counterparty": "0x2222222222222222222222222222222222220006"
+        },
+        {
+          "detail": "Deployed malicious contract",
+          "tx_hash": "0x1237",
+          "block": 16000007,
+          "counterparty": "0x2222222222222222222222222222222222220007"
+        },
+        {
+          "detail": "Deployed malicious contract",
+          "tx_hash": "0x1238",
+          "block": 16000008,
+          "counterparty": "0x2222222222222222222222222222222222220008"
+        },
+        {
+          "detail": "Deployed malicious contract",
+          "tx_hash": "0x1239",
+          "block": 16000009,
+          "counterparty": "0x2222222222222222222222222222222222220009"
+        }
+      ]
+    }
+  ],
+  "points": [
+    {
+      "signal_id": "massive_laundering_ring",
+      "points": 100,
+      "reason": "Central hub for 50+ mixers and stolen funds."
+    }
+  ],
+  "score": 100,
+  "overall_risk": "high",
+  "history_truncated": true,
+  "warnings": [],
+  "graph": {
+    "nodes": [
+      {
+        "id": "0x6666666666666666666666666666666666666666",
+        "label": "Lazarus Group (Main)",
+        "type": "target"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000000",
+        "label": "Tornado Router 0",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000001",
+        "label": "Tornado Router 1",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000002",
+        "label": "Tornado Router 2",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000003",
+        "label": "Tornado Router 3",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000004",
+        "label": "Tornado Router 4",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000005",
+        "label": "Tornado Router 5",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000006",
+        "label": "Tornado Router 6",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000007",
+        "label": "Tornado Router 7",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000008",
+        "label": "Tornado Router 8",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000009",
+        "label": "Tornado Router 9",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x000000000000000000000000000000000000000a",
+        "label": "Tornado Router 10",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x000000000000000000000000000000000000000b",
+        "label": "Tornado Router 11",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x000000000000000000000000000000000000000c",
+        "label": "Tornado Router 12",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x000000000000000000000000000000000000000d",
+        "label": "Tornado Router 13",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x000000000000000000000000000000000000000e",
+        "label": "Tornado Router 14",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x000000000000000000000000000000000000000f",
+        "label": "Tornado Router 15",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000010",
+        "label": "Tornado Router 16",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000011",
+        "label": "Tornado Router 17",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000012",
+        "label": "Tornado Router 18",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000013",
+        "label": "Tornado Router 19",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000014",
+        "label": "Tornado Router 20",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000015",
+        "label": "Tornado Router 21",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000016",
+        "label": "Tornado Router 22",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000017",
+        "label": "Tornado Router 23",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000018",
+        "label": "Tornado Router 24",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000019",
+        "label": "Tornado Router 25",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x000000000000000000000000000000000000001a",
+        "label": "Tornado Router 26",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x000000000000000000000000000000000000001b",
+        "label": "Tornado Router 27",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x000000000000000000000000000000000000001c",
+        "label": "Tornado Router 28",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x000000000000000000000000000000000000001d",
+        "label": "Tornado Router 29",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x000000000000000000000000000000000000001e",
+        "label": "Tornado Router 30",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x000000000000000000000000000000000000001f",
+        "label": "Tornado Router 31",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000020",
+        "label": "Tornado Router 32",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000021",
+        "label": "Tornado Router 33",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000022",
+        "label": "Tornado Router 34",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000023",
+        "label": "Tornado Router 35",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000024",
+        "label": "Tornado Router 36",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000025",
+        "label": "Tornado Router 37",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000026",
+        "label": "Tornado Router 38",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000027",
+        "label": "Tornado Router 39",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000028",
+        "label": "Tornado Router 40",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000029",
+        "label": "Tornado Router 41",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x000000000000000000000000000000000000002a",
+        "label": "Tornado Router 42",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x000000000000000000000000000000000000002b",
+        "label": "Tornado Router 43",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x000000000000000000000000000000000000002c",
+        "label": "Tornado Router 44",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x000000000000000000000000000000000000002d",
+        "label": "Tornado Router 45",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x000000000000000000000000000000000000002e",
+        "label": "Tornado Router 46",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x000000000000000000000000000000000000002f",
+        "label": "Tornado Router 47",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000030",
+        "label": "Tornado Router 48",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x0000000000000000000000000000000000000031",
+        "label": "Tornado Router 49",
+        "type": "risky_contract"
+      },
+      {
+        "id": "0x1111111111111111111111111111111111110000",
+        "label": "Exploited Victim 0",
+        "type": "wallet"
+      },
+      {
+        "id": "0x1111111111111111111111111111111111110001",
+        "label": "Exploited Victim 1",
+        "type": "wallet"
+      },
+      {
+        "id": "0x1111111111111111111111111111111111110002",
+        "label": "Exploited Victim 2",
+        "type": "wallet"
+      },
+      {
+        "id": "0x1111111111111111111111111111111111110003",
+        "label": "Exploited Victim 3",
+        "type": "wallet"
+      },
+      {
+        "id": "0x1111111111111111111111111111111111110004",
+        "label": "Exploited Victim 4",
+        "type": "wallet"
+      },
+      {
+        "id": "0x1111111111111111111111111111111111110005",
+        "label": "Exploited Victim 5",
+        "type": "wallet"
+      },
+      {
+        "id": "0x1111111111111111111111111111111111110006",
+        "label": "Exploited Victim 6",
+        "type": "wallet"
+      },
+      {
+        "id": "0x1111111111111111111111111111111111110007",
+        "label": "Exploited Victim 7",
+        "type": "wallet"
+      },
+      {
+        "id": "0x1111111111111111111111111111111111110008",
+        "label": "Exploited Victim 8",
+        "type": "wallet"
+      },
+      {
+        "id": "0x1111111111111111111111111111111111110009",
+        "label": "Exploited Victim 9",
+        "type": "wallet"
+      },
+      {
+        "id": "0x111111111111111111111111111111111111000a",
+        "label": "Exploited Victim 10",
+        "type": "wallet"
+      },
+      {
+        "id": "0x111111111111111111111111111111111111000b",
+        "label": "Exploited Victim 11",
+        "type": "wallet"
+      },
+      {
+        "id": "0x111111111111111111111111111111111111000c",
+        "label": "Exploited Victim 12",
+        "type": "wallet"
+      },
+      {
+        "id": "0x111111111111111111111111111111111111000d",
+        "label": "Exploited Victim 13",
+        "type": "wallet"
+      },
+      {
+        "id": "0x111111111111111111111111111111111111000e",
+        "label": "Exploited Victim 14",
+        "type": "wallet"
+      },
+      {
+        "id": "0x111111111111111111111111111111111111000f",
+        "label": "Exploited Victim 15",
+        "type": "wallet"
+      },
+      {
+        "id": "0x1111111111111111111111111111111111110010",
+        "label": "Exploited Victim 16",
+        "type": "wallet"
+      },
+      {
+        "id": "0x1111111111111111111111111111111111110011",
+        "label": "Exploited Victim 17",
+        "type": "wallet"
+      },
+      {
+        "id": "0x1111111111111111111111111111111111110012",
+        "label": "Exploited Victim 18",
+        "type": "wallet"
+      },
+      {
+        "id": "0x1111111111111111111111111111111111110013",
+        "label": "Exploited Victim 19",
+        "type": "wallet"
+      },
+      {
+        "id": "0x2222222222222222222222222222222222220000",
+        "label": "Fake Phishing Token 0",
+        "type": "contract"
+      },
+      {
+        "id": "0x2222222222222222222222222222222222220001",
+        "label": "Fake Phishing Token 1",
+        "type": "contract"
+      },
+      {
+        "id": "0x2222222222222222222222222222222222220002",
+        "label": "Fake Phishing Token 2",
+        "type": "contract"
+      },
+      {
+        "id": "0x2222222222222222222222222222222222220003",
+        "label": "Fake Phishing Token 3",
+        "type": "contract"
+      },
+      {
+        "id": "0x2222222222222222222222222222222222220004",
+        "label": "Fake Phishing Token 4",
+        "type": "contract"
+      },
+      {
+        "id": "0x2222222222222222222222222222222222220005",
+        "label": "Fake Phishing Token 5",
+        "type": "contract"
+      },
+      {
+        "id": "0x2222222222222222222222222222222222220006",
+        "label": "Fake Phishing Token 6",
+        "type": "contract"
+      },
+      {
+        "id": "0x2222222222222222222222222222222222220007",
+        "label": "Fake Phishing Token 7",
+        "type": "contract"
+      },
+      {
+        "id": "0x2222222222222222222222222222222222220008",
+        "label": "Fake Phishing Token 8",
+        "type": "contract"
+      },
+      {
+        "id": "0x2222222222222222222222222222222222220009",
+        "label": "Fake Phishing Token 9",
+        "type": "contract"
+      }
+    ],
+    "edges": [
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000000",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000001",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000001",
+        "target": "0x0000000000000000000000000000000000000000",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000002",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000002",
+        "target": "0x0000000000000000000000000000000000000001",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000003",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000003",
+        "target": "0x0000000000000000000000000000000000000002",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000004",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000004",
+        "target": "0x0000000000000000000000000000000000000003",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000005",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000005",
+        "target": "0x0000000000000000000000000000000000000004",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000006",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000006",
+        "target": "0x0000000000000000000000000000000000000005",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000007",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000007",
+        "target": "0x0000000000000000000000000000000000000006",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000008",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000008",
+        "target": "0x0000000000000000000000000000000000000007",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000009",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000009",
+        "target": "0x0000000000000000000000000000000000000008",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x000000000000000000000000000000000000000a",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x000000000000000000000000000000000000000a",
+        "target": "0x0000000000000000000000000000000000000009",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x000000000000000000000000000000000000000b",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x000000000000000000000000000000000000000b",
+        "target": "0x000000000000000000000000000000000000000a",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x000000000000000000000000000000000000000c",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x000000000000000000000000000000000000000c",
+        "target": "0x000000000000000000000000000000000000000b",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x000000000000000000000000000000000000000d",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x000000000000000000000000000000000000000d",
+        "target": "0x000000000000000000000000000000000000000c",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x000000000000000000000000000000000000000e",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x000000000000000000000000000000000000000e",
+        "target": "0x000000000000000000000000000000000000000d",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x000000000000000000000000000000000000000f",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x000000000000000000000000000000000000000f",
+        "target": "0x000000000000000000000000000000000000000e",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000010",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000010",
+        "target": "0x000000000000000000000000000000000000000f",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000011",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000011",
+        "target": "0x0000000000000000000000000000000000000010",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000012",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000012",
+        "target": "0x0000000000000000000000000000000000000011",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000013",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000013",
+        "target": "0x0000000000000000000000000000000000000012",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000014",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000014",
+        "target": "0x0000000000000000000000000000000000000013",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000015",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000015",
+        "target": "0x0000000000000000000000000000000000000014",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000016",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000016",
+        "target": "0x0000000000000000000000000000000000000015",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000017",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000017",
+        "target": "0x0000000000000000000000000000000000000016",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000018",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000018",
+        "target": "0x0000000000000000000000000000000000000017",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000019",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000019",
+        "target": "0x0000000000000000000000000000000000000018",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x000000000000000000000000000000000000001a",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x000000000000000000000000000000000000001a",
+        "target": "0x0000000000000000000000000000000000000019",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x000000000000000000000000000000000000001b",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x000000000000000000000000000000000000001b",
+        "target": "0x000000000000000000000000000000000000001a",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x000000000000000000000000000000000000001c",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x000000000000000000000000000000000000001c",
+        "target": "0x000000000000000000000000000000000000001b",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x000000000000000000000000000000000000001d",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x000000000000000000000000000000000000001d",
+        "target": "0x000000000000000000000000000000000000001c",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x000000000000000000000000000000000000001e",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x000000000000000000000000000000000000001e",
+        "target": "0x000000000000000000000000000000000000001d",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x000000000000000000000000000000000000001f",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x000000000000000000000000000000000000001f",
+        "target": "0x000000000000000000000000000000000000001e",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000020",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000020",
+        "target": "0x000000000000000000000000000000000000001f",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000021",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000021",
+        "target": "0x0000000000000000000000000000000000000020",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000022",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000022",
+        "target": "0x0000000000000000000000000000000000000021",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000023",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000023",
+        "target": "0x0000000000000000000000000000000000000022",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000024",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000024",
+        "target": "0x0000000000000000000000000000000000000023",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000025",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000025",
+        "target": "0x0000000000000000000000000000000000000024",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000026",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000026",
+        "target": "0x0000000000000000000000000000000000000025",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000027",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000027",
+        "target": "0x0000000000000000000000000000000000000026",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000028",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000028",
+        "target": "0x0000000000000000000000000000000000000027",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000029",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000029",
+        "target": "0x0000000000000000000000000000000000000028",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x000000000000000000000000000000000000002a",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x000000000000000000000000000000000000002a",
+        "target": "0x0000000000000000000000000000000000000029",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x000000000000000000000000000000000000002b",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x000000000000000000000000000000000000002b",
+        "target": "0x000000000000000000000000000000000000002a",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x000000000000000000000000000000000000002c",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x000000000000000000000000000000000000002c",
+        "target": "0x000000000000000000000000000000000000002b",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x000000000000000000000000000000000000002d",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x000000000000000000000000000000000000002d",
+        "target": "0x000000000000000000000000000000000000002c",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x000000000000000000000000000000000000002e",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x000000000000000000000000000000000000002e",
+        "target": "0x000000000000000000000000000000000000002d",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x000000000000000000000000000000000000002f",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x000000000000000000000000000000000000002f",
+        "target": "0x000000000000000000000000000000000000002e",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000030",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000030",
+        "target": "0x000000000000000000000000000000000000002f",
+        "label": "wash"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x0000000000000000000000000000000000000031",
+        "label": "0.1 ETH"
+      },
+      {
+        "source": "0x0000000000000000000000000000000000000031",
+        "target": "0x0000000000000000000000000000000000000030",
+        "label": "wash"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110000",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110001",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110002",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110003",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110004",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110005",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110006",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110007",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110008",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110009",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x111111111111111111111111111111111111000a",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x111111111111111111111111111111111111000b",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x111111111111111111111111111111111111000c",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x111111111111111111111111111111111111000d",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x111111111111111111111111111111111111000e",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x111111111111111111111111111111111111000f",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110010",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110011",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110012",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110013",
+        "target": "0x6666666666666666666666666666666666666666",
+        "label": "1000 ETH (Stolen)"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x2222222222222222222222222222222222220000",
+        "label": "Deploy"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x2222222222222222222222222222222222220001",
+        "label": "Deploy"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x2222222222222222222222222222222222220002",
+        "label": "Deploy"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x2222222222222222222222222222222222220003",
+        "label": "Deploy"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x2222222222222222222222222222222222220004",
+        "label": "Deploy"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x2222222222222222222222222222222222220005",
+        "label": "Deploy"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x2222222222222222222222222222222222220006",
+        "label": "Deploy"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x2222222222222222222222222222222222220007",
+        "label": "Deploy"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x2222222222222222222222222222222222220008",
+        "label": "Deploy"
+      },
+      {
+        "source": "0x6666666666666666666666666666666666666666",
+        "target": "0x2222222222222222222222222222222222220009",
+        "label": "Deploy"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110000",
+        "target": "0x2222222222222222222222222222222222220009",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110001",
+        "target": "0x2222222222222222222222222222222222220002",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110002",
+        "target": "0x2222222222222222222222222222222222220002",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110003",
+        "target": "0x2222222222222222222222222222222222220005",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110004",
+        "target": "0x2222222222222222222222222222222222220007",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110005",
+        "target": "0x2222222222222222222222222222222222220008",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110006",
+        "target": "0x2222222222222222222222222222222222220007",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110007",
+        "target": "0x2222222222222222222222222222222222220005",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110008",
+        "target": "0x2222222222222222222222222222222222220004",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110009",
+        "target": "0x2222222222222222222222222222222222220005",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x111111111111111111111111111111111111000a",
+        "target": "0x2222222222222222222222222222222222220008",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x111111111111111111111111111111111111000b",
+        "target": "0x2222222222222222222222222222222222220009",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x111111111111111111111111111111111111000c",
+        "target": "0x2222222222222222222222222222222222220006",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x111111111111111111111111111111111111000d",
+        "target": "0x2222222222222222222222222222222222220000",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x111111111111111111111111111111111111000e",
+        "target": "0x2222222222222222222222222222222222220003",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x111111111111111111111111111111111111000f",
+        "target": "0x2222222222222222222222222222222222220007",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110010",
+        "target": "0x2222222222222222222222222222222222220005",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110011",
+        "target": "0x2222222222222222222222222222222222220000",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110012",
+        "target": "0x2222222222222222222222222222222222220004",
+        "label": "Approve (Malicious)"
+      },
+      {
+        "source": "0x1111111111111111111111111111111111110013",
+        "target": "0x2222222222222222222222222222222222220002",
+        "label": "Approve (Malicious)"
+      }
+    ]
+  },
+  "summary": "This address represents a highly sophisticated cybercriminal hub (likely Lazarus Group). The interaction graph reveals a massive star topology where stolen funds from 20+ victims are routed into a central wallet, which then systematically disperses the assets across 50 different mixer contracts (like Tornado Cash) to obfuscate the trail. The address also acts as an active deployer for fake phishing tokens designed to trick retail users into malicious approvals.",
+  "generated_at": "2026-09-20T02:36:48.671113",
+  "cache": {
+    "hit": true
+  },
+  "coverage": {
+    "chains": {
+      "ethereum": {
+        "transactions": 10000,
+        "token_transfers": 10000,
+        "first_seen": "2020-01-01T00:00:00Z",
+        "last_seen": "2026-01-01T00:00:00Z",
+        "truncated": true,
+        "ok": true
+      }
+    }
+  },
+  "approvals": [],
+  "timeline": [
+    {
+      "month": "2023-01",
+      "transactions": 500,
+      "events": []
+    }
+  ]
+}

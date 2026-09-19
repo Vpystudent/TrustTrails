@@ -1,0 +1,44 @@
+{
+  "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+  "address_type": "contract",
+  "chains": [
+    "ethereum"
+  ],
+  "overall_risk": "low",
+  "score": 0,
+  "points": [],
+  "signals": [],
+  "graph": {
+    "nodes": [
+      {
+        "id": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+        "label": "0xd8da...6045",
+        "type": "target"
+      }
+    ],
+    "edges": []
+  },
+  "summary": "No risk signals found by these checks. Not a guarantee of safety. New or low-activity addresses can look clean.",
+  "summary_status": "ok",
+  "history_truncated": false,
+  "warnings": [],
+  "generated_at": "2026-09-19T20:39:49.094145+00:00",
+  "cache": {
+    "hit": false,
+    "saved_at": "2026-09-19T20:39:49.094145+00:00"
+  },
+  "coverage": {
+    "chains": {
+      "ethereum": {
+        "transactions": 0,
+        "token_transfers": 0,
+        "first_seen": null,
+        "last_seen": null,
+        "truncated": false,
+        "ok": true
+      }
+    }
+  },
+  "approvals": [],
+  "timeline": []
+}

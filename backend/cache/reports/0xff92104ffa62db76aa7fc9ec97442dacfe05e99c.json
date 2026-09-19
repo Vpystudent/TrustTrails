@@ -1,0 +1,113 @@
+{
+  "address": "0xff92104ffa62db76aa7fc9ec97442dacfe05e99c",
+  "address_type": "wallet",
+  "chains": [
+    "ethereum",
+    "base"
+  ],
+  "overall_risk": "high",
+  "score": 65,
+  "points": [
+    {
+      "signal_id": "flagged_address",
+      "points": 65.0,
+      "reason": "Fired 2 time(s) with max severity high."
+    }
+  ],
+  "signals": [
+    {
+      "signal_id": "flagged_address",
+      "severity": "high",
+      "score": 1.0,
+      "chain": "ethereum",
+      "title": "Address on a known-scam list",
+      "evidence": [
+        {
+          "detail": "Evidence: third-party list (ScamSniffer)",
+          "source": "scamsniffer",
+          "snapshot": "2026-09-19",
+          "row_reference": 210
+        }
+      ],
+      "rule": "This address appears on the ScamSniffer phishing address list (snapshot 2026-09-19)"
+    },
+    {
+      "signal_id": "flagged_address",
+      "severity": "high",
+      "score": 1.0,
+      "chain": "base",
+      "title": "Address on a known-scam list",
+      "evidence": [
+        {
+          "detail": "Evidence: third-party list (ScamSniffer)",
+          "source": "scamsniffer",
+          "snapshot": "2026-09-19",
+          "row_reference": 210
+        },
+        {
+          "tx_hash": "0x76324093b649dae046ade5f5183166497fc7ae0c3d2164cb8062fe390315703a",
+          "block": 46222558,
+          "detail": "On-chain activity by this flagged address."
+        },
+        {
+          "tx_hash": "0xdcbaee2659b34ad93670ba50f3ab7e69026c7e128d45c1a1294c47e7c10278c9",
+          "block": 26548417,
+          "detail": "On-chain activity by this flagged address."
+        }
+      ],
+      "rule": "This address appears on the ScamSniffer phishing address list (snapshot 2026-09-19)"
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "0xff92104ffa62db76aa7fc9ec97442dacfe05e99c",
+        "label": "0xff92...e99c",
+        "type": "target"
+      }
+    ],
+    "edges": []
+  },
+  "summary": "Address on a known-scam list. 1 piece(s) of evidence found. Address on a known-scam list. 3 piece(s) of evidence found. Review the evidence below.",
+  "summary_status": "disabled",
+  "history_truncated": false,
+  "warnings": [],
+  "generated_at": "2026-09-19T20:56:27.144679+00:00",
+  "cache": {
+    "hit": false,
+    "saved_at": "2026-09-19T20:56:27.144679+00:00"
+  },
+  "coverage": {
+    "chains": {
+      "ethereum": {
+        "transactions": 0,
+        "token_transfers": 0,
+        "first_seen": null,
+        "last_seen": null,
+        "truncated": false,
+        "ok": true
+      },
+      "base": {
+        "transactions": 0,
+        "token_transfers": 2,
+        "first_seen": "2025-02-18T08:13:01+00:00",
+        "last_seen": "2026-05-19T18:17:43+00:00",
+        "truncated": false,
+        "ok": true
+      }
+    }
+  },
+  "approvals": [],
+  "timeline": [
+    {
+      "month": "2025-02",
+      "transactions": 1,
+      "events": []
+    },
+    {
+      "month": "2026-05",
+      "transactions": 1,
+      "events": []
+    }
+  ]
+}
