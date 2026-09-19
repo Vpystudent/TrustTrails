@@ -6,20 +6,13 @@ from backend.analyze import analyze
 
 def run():
     demo_file = os.path.join(os.path.dirname(__file__), '..', 'backend', 'demo_addresses.json')
-    if not os.path.exists(demo_file):
-        with open(demo_file, 'w') as f:
-            json.dump([
-                {"label": "Safe Protocol (USDC)", "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48", "chains": ["ethereum"]},
-                {"label": "Scam Wallet", "address": "TODO_FILL_ME", "chains": ["ethereum", "base"]},
-                {"label": "Live Unlimited Approval", "address": "TODO_FILL_ME", "chains": ["ethereum", "base"]}
-            ], f, indent=2)
             
     with open(demo_file, 'r') as f:
         demos = json.load(f)
         
     for d in demos:
         addr = d['address']
-        if addr == "TODO_FILL_ME" or not addr.startswith("0x"):
+        if addr == "TODO_FILL_ME" or not addr.startswith("0x") or d.get('source') == "Sample data":
             print(f"Skipping {d['label']}")
             continue
             

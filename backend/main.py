@@ -21,7 +21,15 @@ def health():
 
 @app.get("/chains")
 def get_chains():
-    return list(CHAINS.values())
+    res = []
+    for cid, c in CHAINS.items():
+        res.append({
+            "id": cid,
+            "name": c.get("name", cid.capitalize()),
+            "explorer_tx_url": c.get('explorer_tx_url', ''),
+            "explorer_addr_url": c.get('explorer_addr_url', '')
+        })
+    return res
 
 @app.get("/report")
 def get_report(address: str = "", chains: str = "ethereum,base", summary: str = "true"):
@@ -35,12 +43,20 @@ def get_report(address: str = "", chains: str = "ethereum,base", summary: str = 
     reports_dir = os.path.join(os.path.dirname(__file__), "cache", "reports")
     cache_path = os.path.join(reports_dir, f"{address}.json")
     
-    if OFFLINE:
+    # FOR DEMO: Always intercept the Boss Level mock address so we don't accidentally fetch a blank on-chain history for it
+    if address == "0x6666666666666666666666666666666666666666":
         if os.path.exists(cache_path):
             with open(cache_path, "r") as f:
                 data = json.load(f)
-                data["cache"]["hit"] = True
+                data["cache"] = {"hit": True}
                 return data
+                
+    if os.path.exists(cache_path):
+        with open(cache_path, "r") as f:
+            data = json.load(f)
+            data["cache"]["hit"] = True
+            return data
+    if OFFLINE:
         raise HTTPException(status_code=404, detail="Report not found in offline cache")
         
     try:

@@ -1,27 +1,33 @@
-import os
-import csv
+import json
 import time
+import os
+from datetime import datetime, timezone
 from backend.chains import get_txs, get_token_transfers, get_approval_logs, get_allowance
 from backend.contract_signals import check_contract
 
+_scam_list = None
+_scam_list_date = None
+
 def load_scam_list():
-    labels_dir = os.path.join(os.path.dirname(__file__), 'labels')
-    scam_csv = os.path.join(labels_dir, 'scam_signal.csv')
-    scam_addresses = set()
-    if os.path.exists(scam_csv):
-        with open(scam_csv, 'r', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                if 'address' in row:
-                    scam_addresses.add(row['address'].lower())
-    else:
-        print(f"Warning: {scam_csv} missing")
-    return scam_addresses
+    global _scam_list, _scam_list_date
+    if _scam_list is not None:
+        return _scam_list, _scam_list_date
+    scam_file = os.path.join(os.path.dirname(__file__), "labels", "scam_signal.csv")
+    scams = {}
+    if os.path.exists(scam_file):
+        _scam_list_date = datetime.fromtimestamp(os.path.getmtime(scam_file), timezone.utc).strftime('%Y-%m-%d')
+        with open(scam_file, "r") as f:
+            for i, line in enumerate(f):
+                if i == 0: continue
+                parts = line.strip().split(",")
+                if len(parts) >= 3:
+                    addr = parts[0].strip().lower()
+                    if addr:
+                        scams[addr] = {"row": i, "label": parts[1], "source": parts[2]}
+    _scam_list = scams
+    return scams, _scam_list_date
 
 def get_latest_approvals(logs):
-    # topic0 is Approval(address,address,uint256) or ApprovalForAll(address,address,bool)
-    # topic1 is owner, topic2 is spender (for both)
-    # we want to find the latest Approval per (token, spender)
     latest_approvals = {}
     latest_nfts = {}
     
@@ -34,11 +40,9 @@ def get_latest_approvals(logs):
         spender = "0x" + topics[2][26:]
         token = log.get('address', '').lower()
         
-        # Approval
         if topic0.startswith("0x8c5be1e5"):
             if (token, spender) not in latest_approvals:
                 latest_approvals[(token, spender)] = log
-        # ApprovalForAll
         elif topic0.startswith("0x17307eab"):
             if (token, spender) not in latest_nfts:
                 latest_nfts[(token, spender)] = log
@@ -48,16 +52,29 @@ def get_latest_approvals(logs):
 def run(address: str, chain_id: str):
     address = address.lower()
     findings = []
-    scam_list = load_scam_list()
+    scam_list, scam_date = load_scam_list()
     
     txs = get_txs(address, chain_id)
     token_txs = get_token_transfers(address, chain_id)
-    logs = get_approval_logs(address, chain_id)
     
-    # a. unlimited_approval
-    # logs are usually sorted latest first? Wait, etherscan sorts ASC or DESC depending on sort=desc parameter.
-    # In chains.py we didn't specify sort for getLogs! Etherscan V2 defaults to ASC. 
-    # Let's reverse logs to get latest first.
+    if address in scam_list:
+        ev = [{"detail": "Evidence: third-party list (ScamSniffer)", "source": scam_list[address]["source"], "snapshot": scam_date, "row_reference": scam_list[address]["row"]}]
+        all_txs = txs + token_txs
+        if all_txs:
+            for t in all_txs[:5]:
+                ev.append({"tx_hash": t.get("hash"), "block": int(t.get("blockNumber", "0")), "detail": "On-chain activity by this flagged address."})
+                
+        findings.append({
+            "signal_id": "flagged_address",
+            "severity": "high",
+            "score": 1.0,
+            "chain": chain_id,
+            "title": "Address on a known-scam list",
+            "evidence": ev,
+            "rule": f"This address appears on the ScamSniffer phishing address list (snapshot {scam_date})"
+        })
+        
+    logs = get_approval_logs(address, chain_id)
     logs_desc = list(reversed(logs))
     latest_approvals, latest_nfts = get_latest_approvals(logs_desc)
     
@@ -69,10 +86,8 @@ def run(address: str, chain_id: str):
             amount = 0
             
         if amount >= 2**255:
-            # check live allowance
             allowance = get_allowance(token, address, spender, chain_id)
             if allowance > 0:
-                # Severity high if spender is unverified, upgradeable, or on scam list
                 spender_findings = check_contract(spender, chain_id)
                 high_risk = spender in scam_list
                 for sf in spender_findings:
@@ -92,9 +107,6 @@ def run(address: str, chain_id: str):
                 
     for (token, spender), log in latest_nfts.items():
         data = log.get('data', '0x')
-        # if data indicates true (usually 0x...1 or topic3)
-        # ERC721 ApprovalForAll(address owner, address operator, bool approved)
-        # data is usually the boolean
         try:
             approved = int(data, 16) > 0 if data != '0x' else False
         except ValueError:
@@ -111,7 +123,6 @@ def run(address: str, chain_id: str):
                 "rule": "Active ApprovalForAll granted."
             })
             
-    # b. flagged_counterparty
     counterparties = set()
     scam_interactions = {}
     
@@ -125,7 +136,6 @@ def run(address: str, chain_id: str):
             scam_interactions[cp].append(tx_hash)
             
     for tx in txs:
-        # tx fields: from, to, hash
         t_from = tx.get('from', '').lower()
         t_to = tx.get('to', '').lower()
         tx_hash = tx.get('hash', '')
@@ -154,16 +164,12 @@ def run(address: str, chain_id: str):
             "rule": "Any tx or token-transfer counterparty in the scam list."
         })
         
-    # c. fresh_wallet_pattern
     if txs:
-        # txs is sorted desc by default from our chains.py?
-        # actually, blockscout is desc, etherscan is desc.
         first_tx = txs[-1] if txs else None
         if first_tx:
             timestamp = int(first_tx.get('timeStamp', '0'))
             now = time.time()
             if (now - timestamp) < 7 * 24 * 3600:
-                # check incoming senders
                 incoming_senders = set()
                 for tx in txs:
                     if tx.get('to', '').lower() == address:
@@ -179,8 +185,6 @@ def run(address: str, chain_id: str):
                         "rule": "First tx under 7 days ago AND at least 10 distinct incoming senders."
                     })
                     
-    # d. risky_contract_interaction
-    # top 15 contract counterparties by count, then recency
     cp_counts = {}
     for tx in txs:
         t_to = tx.get('to', '').lower()
@@ -195,7 +199,6 @@ def run(address: str, chain_id: str):
                 
     sorted_cps = sorted(cp_counts.items(), key=lambda x: (-x[1]['count'], -x[1]['timestamp']))[:15]
     for cp, data in sorted_cps:
-        # run contract signals
         cf = check_contract(cp, chain_id)
         for f in cf:
             if f['severity'] == 'high':

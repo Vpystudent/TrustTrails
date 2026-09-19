@@ -1,0 +1,53 @@
+[
+  {
+    "address": "0xff92104ffa62db76aa7fc9ec97442dacfe05e99c",
+    "chains_with_activity": [
+      "ethereum",
+      "base"
+    ],
+    "tx_counts": {
+      "ethereum": 73,
+      "base": 2,
+      "arbitrum": 0
+    },
+    "first_seen": "1970-01-01T00:00:00+00:00",
+    "last_seen": "2023-08-29T05:44:59+00:00",
+    "distinct_senders": 10,
+    "source": "scamsniffer",
+    "snapshot": "2026-09-19"
+  },
+  {
+    "address": "0xc85e65f19442eef47e4ac70843c044df4bb5f4c4",
+    "chains_with_activity": [
+      "ethereum",
+      "base"
+    ],
+    "tx_counts": {
+      "ethereum": 104,
+      "base": 1,
+      "arbitrum": 0
+    },
+    "first_seen": "1970-01-01T00:00:00+00:00",
+    "last_seen": "2023-03-17T22:02:11+00:00",
+    "distinct_senders": 22,
+    "source": "scamsniffer",
+    "snapshot": "2026-09-19"
+  },
+  {
+    "address": "0xd2356c12b2962a2a218870ab5c0c2a0ff480325f",
+    "chains_with_activity": [
+      "ethereum",
+      "base"
+    ],
+    "tx_counts": {
+      "ethereum": 134,
+      "base": 1,
+      "arbitrum": 0
+    },
+    "first_seen": "1970-01-01T00:00:00+00:00",
+    "last_seen": "2023-04-12T08:01:59+00:00",
+    "distinct_senders": 32,
+    "source": "scamsniffer",
+    "snapshot": "2026-09-19"
+  }
+]

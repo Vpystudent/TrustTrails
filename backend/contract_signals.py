@@ -4,6 +4,7 @@ import os
 import csv
 from eth_hash.auto import keccak
 from backend.chains import get_code, get_storage_at, get_source, get_contract_creation, rpc_call, is_contract, get_txs
+from datetime import datetime, timezone
 
 EIP1967_IMPL_SLOT = hex(int.from_bytes(keccak(b"eip1967.proxy.implementation"), "big") - 1)
 EIP1967_ADMIN_SLOT = hex(int.from_bytes(keccak(b"eip1967.proxy.admin"), "big") - 1)
@@ -14,21 +15,27 @@ def get_selector(sig):
 OWNER_SELECTOR = get_selector("owner()")
 
 _scam_list = None
+_scam_list_date = None
+
 def load_scam_list():
-    global _scam_list
+    global _scam_list, _scam_list_date
     if _scam_list is not None:
-        return _scam_list
+        return _scam_list, _scam_list_date
     labels_dir = os.path.join(os.path.dirname(__file__), 'labels')
     scam_csv = os.path.join(labels_dir, 'scam_signal.csv')
-    scam_addresses = set()
+    scams = {}
     if os.path.exists(scam_csv):
+        _scam_list_date = datetime.fromtimestamp(os.path.getmtime(scam_csv), timezone.utc).strftime('%Y-%m-%d')
         with open(scam_csv, 'r', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                if 'address' in row:
-                    scam_addresses.add(row['address'].lower())
-    _scam_list = scam_addresses
-    return scam_addresses
+            for i, line in enumerate(f):
+                if i == 0: continue
+                parts = line.strip().split(",")
+                if len(parts) >= 3:
+                    addr = parts[0].strip().lower()
+                    if addr:
+                        scams[addr] = {"row": i, "label": parts[1], "source": parts[2]}
+    _scam_list = scams
+    return scams, _scam_list_date
 
 def get_owner(address, chain_id):
     res = rpc_call(chain_id, "eth_call", [{"to": address, "data": OWNER_SELECTOR}, "latest"])
@@ -45,16 +52,22 @@ def check_contract(address, chain_id):
     if not is_contract(address, chain_id):
         return findings
         
-    scam_list = load_scam_list()
+    scam_list, scam_date = load_scam_list()
     if address in scam_list:
+        ev = [{"detail": "Evidence: third-party list (ScamSniffer)", "source": scam_list[address]["source"], "snapshot": scam_date, "row_reference": scam_list[address]["row"]}]
+        txs = get_txs(address, chain_id)
+        if txs:
+            for t in txs[:5]:
+                ev.append({"tx_hash": t.get("hash"), "block": int(t.get("blockNumber", "0")), "detail": "On-chain activity by this flagged address."})
+                
         findings.append({
-            "signal_id": "flagged_contract",
+            "signal_id": "flagged_address",
             "severity": "high",
             "score": 1.0,
             "chain": chain_id,
-            "title": "Flagged Contract",
-            "evidence": [{"tx_hash": "", "block": 0, "detail": f"Contract {address} is on the scam list."}],
-            "rule": "Contract is in scam_signal.csv."
+            "title": "Address on a known-scam list",
+            "evidence": ev,
+            "rule": f"This address appears on the ScamSniffer phishing address list (snapshot {scam_date})"
         })
         
     source_data = get_source(address, chain_id)

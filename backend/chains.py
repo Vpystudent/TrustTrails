@@ -47,6 +47,29 @@ def fetch_blockscout_paginated(base_url, endpoint, max_records=MAX_RECORDS):
         if not data:
             break
         items = data.get('items', [])
+        
+        # NORMALIZE
+        for item in items:
+            if isinstance(item.get('from'), dict):
+                item['from'] = item['from'].get('hash', '')
+            if isinstance(item.get('to'), dict):
+                item['to'] = item['to'].get('hash', '')
+            if 'transaction_hash' in item:
+                item['hash'] = item['transaction_hash']
+            elif 'hash' not in item:
+                item['hash'] = ''
+                
+            if 'timestamp' in item:
+                import datetime
+                try:
+                    dt = datetime.datetime.strptime(item['timestamp'], "%Y-%m-%dT%H:%M:%S.000000Z")
+                    item['timeStamp'] = str(int(dt.timestamp()))
+                except:
+                    item['timeStamp'] = '0'
+                    
+            if 'block_number' in item:
+                item['blockNumber'] = str(item['block_number'])
+                
         all_results.extend(items)
         next_page = data.get('next_page_params')
         if not next_page:

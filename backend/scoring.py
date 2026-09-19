@@ -2,6 +2,7 @@ def score(signals):
     weights = {
         "flagged_counterparty": 40,
         "flagged_contract": 40,
+        "flagged_address": 60,
         "unlimited_approval": 35,
         "unverified_contract": 20,
         "nft_approval_for_all": 20,
@@ -26,7 +27,6 @@ def score(signals):
         sid = s["signal_id"]
         sev = s["severity"]
         signal_counts[sid] = signal_counts.get(sid, 0) + 1
-        # take the highest severity seen for this signal id
         current_sev = signal_severity.get(sid, "low")
         if severity_multiplier[sev] > severity_multiplier[current_sev]:
             signal_severity[sid] = sev
@@ -39,7 +39,6 @@ def score(signals):
         sev = signal_severity.get(sid, "medium")
         mult = severity_multiplier.get(sev, 0.75)
         
-        # each counts once, +5 per extra instance capped at +10
         extra = min(10, (count - 1) * 5)
         
         pts = (base_weight + extra) * mult
@@ -51,17 +50,17 @@ def score(signals):
             "reason": f"Fired {count} time(s) with max severity {sev}."
         })
         
-    total_score = min(100, int(round(total_score)))
+    capped_score = min(100, int(round(total_score)))
     
-    if total_score < 30:
+    if capped_score < 30:
         overall_risk = "low"
-    elif total_score < 60:
+    elif capped_score < 60:
         overall_risk = "medium"
     else:
         overall_risk = "high"
         
     return {
         "overall_risk": overall_risk,
-        "score": total_score,
+        "score": capped_score,
         "points": points
     }
