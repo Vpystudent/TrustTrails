@@ -1,0 +1,6 @@
+[
+  { "label": "Safe Protocol", "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48", "chains": ["ethereum"], "source": "Etherscan" },
+  { "label": "Active Wallet", "address": "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045", "chains": ["ethereum"], "source": "ENS (vitalik.eth)" },
+  { "label": "Flagged Scam", "address": "0xff92104ffa62db76aa7fc9ec97442dacfe05e99c", "chains": ["ethereum", "base"], "source": "ScamSniffer" },
+  { "label": "Sample: multi-hop path (synthetic)", "address": "0x6666666666666666666666666666666666666666", "chains": ["ethereum"], "source": "Sample data" }
+]

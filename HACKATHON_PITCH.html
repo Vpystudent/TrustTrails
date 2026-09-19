@@ -1,0 +1,71 @@
+
+<html>
+<head>
+<style>
+body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 40px; color: #333; }
+h1 { color: #2563eb; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; }
+h2 { color: #1e40af; margin-top: 30px; }
+h3 { color: #4b5563; }
+p, li { font-size: 16px; }
+code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<h1>TrustTrail: The Pitch Playbook</h1>
+<p>This is your master guide for presenting TrustTrail. Read this a few times to get comfortable, and you will be completely bulletproof when the judges ask questions.</p>
+<hr />
+<h2>1. The Hook (Your Opening)</h2>
+<p><strong>"Hi, I'm Chris. Today I'm presenting TrustTrail.</strong></p>
+<p>If you look at Web3 security today, it's completely fragmented. If you want to know if a smart contract or a wallet is safe, you either stare at a block explorer which is just a wall of raw hex data, or you pay thousands of dollars for enterprise forensics tools. </p>
+<p>I built TrustTrail to democratize cross-chain security. It’s an engine that takes any wallet or contract address, scans its entire interaction history across multiple blockchains, and generates an instant, human-readable risk report. </p>
+<p>And our core philosophy is: <strong>Every risk flag comes with proof.</strong> We don't just say 'High Risk'—we link you to the exact transaction hashes that prove it."</p>
+<hr />
+<h2>2. Walking Through the UI Demos</h2>
+<p><em>As you talk, click through the demo buttons at the top of the UI.</em></p>
+<h3>Demo 1: Safe Protocol (USDC)</h3>
+<ul>
+<li><strong>What to click:</strong> <code>Safe Protocol (USDC)</code></li>
+<li><strong>What to say:</strong> "Let's start with a safe, famous contract: USDC. TrustTrail doesn't just blindly whitelist big names. It actually inspects the contract structure. Here, it correctly identifies that USDC is an <strong>Upgradeable Proxy</strong>. This means the admins can technically change the code at any time. It flags this as a structural risk, but because the contract's interaction history is otherwise perfectly clean, it gets a highly trusted score of 0."</li>
+</ul>
+<h3>Demo 2: Active Wallet (Vitalik.eth)</h3>
+<ul>
+<li><strong>What to click:</strong> <code>Active Wallet (Medium Risk)</code></li>
+<li><strong>What to say:</strong> "Now let's look at a highly active user—this is actually Vitalik Buterin's public wallet. The engine pulls 10,000 transactions and maps his counterparties. Even though it's a famous wallet, TrustTrail flags that he has left multiple <strong>Unlimited Token Approvals</strong> open on random DeFi contracts over the years. This shows how our engine catches the subtle, chronic security hygiene issues that lead to retail users getting drained."</li>
+</ul>
+<h3>Demo 3: Flagged Scam</h3>
+<ul>
+<li><strong>What to click:</strong> <code>Flagged Scam</code></li>
+<li><strong>What to say:</strong> "Of course, we also integrate with explicit threat-intel databases. This is a known phishing wallet. The system immediately red-flags it with a 100/100 score, isolating the exact transactions where the malicious activity occurred."</li>
+</ul>
+<h3>Demo 4: The Boss Level</h3>
+<ul>
+<li><strong>What to click:</strong> <code>BOSS: Lazarus Laundering Ring</code></li>
+<li><strong>What to say:</strong> "Finally, I want to show you the power of our Interaction Graph. This simulates a massive cybercriminal hub. The Cytoscape physics engine dynamically maps out a web of 80 nodes where 20 exploited victims funnel funds into a central hub, which then systematically wash-trades the funds across 50 different mixer contracts. It visualizes the money laundering topology instantly."</li>
+</ul>
+<hr />
+<h2>3. How the Tech Works (Backend Architecture)</h2>
+<p>If they ask how you built it, here is your stack:</p>
+<ul>
+<li><strong>The Engine (Python/FastAPI):</strong> An asynchronous backend that coordinates fetching data, running heuristics, scoring, and AI narration.</li>
+<li><strong>The Data Layer:</strong> It is truly cross-chain. It queries <strong>Etherscan V2</strong> for Ethereum and <strong>Blockscout V2</strong> for Base. </li>
+<li><strong>The Cache:</strong> To survive the hackathon and bypass strict free-tier API limits, I wrote a custom SQLite caching layer. It spaces every API request exactly 0.25 seconds apart and gracefully retries if it hits a rate limit.</li>
+<li><strong>The Heuristics:</strong> The rules are pure Python math. We don't just rely on APIs. For example, to detect if a contract is a proxy, we use an RPC node to literally call <code>eth_getStorageAt</code> and check the EIP-1967 memory slots ourselves.</li>
+<li><strong>The Frontend:</strong> React, Vite, and Tailwind CSS v4, utilizing Cytoscape.js for the dynamic physics-based interaction graph.</li>
+</ul>
+<hr />
+<h2>4. The Role of AI (Crucial Point!)</h2>
+<p><em>Judges love asking about AI hallucinations in security. Use this to impress them:</em></p>
+<p><strong>Judge:</strong> "Security is critical. How do you prevent the AI from hallucinating a false risk score?"</p>
+<p><strong>Your Answer:</strong> "That's exactly why I strictly firewalled the AI. <strong>The LLM has absolutely zero control over the risk score.</strong> Our scoring is 100% deterministic and rule-based in Python. We only use the LLM (Google AI Studio) at the very end of the pipeline as a <em>translator</em>. We feed it our finalized JSON report, and it simply narrates our evidence into a plain-English paragraph for non-technical users. If the LLM breaks or hallucinates, the hard math of the risk score remains totally unaffected."</p>
+<hr />
+<h2>5. Rapid-Fire Q&amp;A (Be Prepared)</h2>
+<p><strong>Q: How do you handle massive exchange wallets with millions of transactions?</strong>
+<strong>A:</strong> "We paginate up to the latest 10,000 interactions per address. For 99% of retail users and standard protocols, this captures their entire history. For Binance hot wallets, the system detects the cap and explicitly flags <code>Warnings: History Truncated</code>, ensuring the user knows the graph is partial."</p>
+<p><strong>Q: Are you just relying on a blacklist to catch scams?</strong>
+<strong>A:</strong> "No. We do use the ScamSniffer database for explicit blocks, but I actually wrote an evaluation script (<code>run_eval.py</code>) that disables the blacklist entirely and tests our engine against a blind dataset. Even without the blacklist, we catch scams by looking at structural heuristics—like fresh wallets with zero history suddenly deploying unverified, proxy-pattern contracts."</p>
+<p><strong>Q: Can you detect off-chain phishing signatures like <code>Permit2</code>?</strong>
+<strong>A:</strong> "Currently, we scan strictly on-chain data (EVM logs and state). Off-chain signatures are a known limitation because they don't emit logs until they are executed on-chain. In the future, we could integrate with a mempool scanner to catch those."</p>
+<p><strong>Q: Why did you use Blockscout for Base instead of Etherscan?</strong>
+<strong>A:</strong> "Etherscan V2 requires a paid Pro plan to access Base network data. To keep this project completely free and open-source, I designed the data layer to be modular. It seamlessly normalizes the schema differences between Etherscan and Blockscout so the analysis engine doesn't even know the difference."</p>
+</body>
+</html>
