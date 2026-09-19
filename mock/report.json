@@ -1,0 +1,75 @@
+{
+  "address": "0x1234567890123456789012345678901234567890",
+  "address_type": "wallet",
+  "chains": ["ethereum", "base"],
+  "overall_risk": "high",
+  "score": 85,
+  "points": [
+    {"signal_id": "flagged_counterparty", "points": 40, "reason": "Interacted with a known scam address"},
+    {"signal_id": "unlimited_approval", "points": 35, "reason": "Granted unlimited approval to an unverified contract"},
+    {"signal_id": "fresh_wallet_pattern", "points": 15, "reason": "Wallet is relatively new with many distinct incoming senders"},
+    {"signal_id": "risky_contract_interaction", "points": 15, "reason": "Interacted with a high-risk contract"}
+  ],
+  "signals": [
+    {
+      "signal_id": "flagged_counterparty",
+      "severity": "high",
+      "score": 1.0,
+      "chain": "ethereum",
+      "title": "Interacted with Flagged Counterparty",
+      "evidence": [
+        {"tx_hash": "0xabc123", "block": 1000000, "detail": "Transfer to known phishing address 0xdeadbeef..."}
+      ],
+      "rule": "Any tx or token-transfer counterparty in the scam list."
+    },
+    {
+      "signal_id": "unlimited_approval",
+      "severity": "high",
+      "score": 1.0,
+      "chain": "ethereum",
+      "title": "Unlimited Token Approval",
+      "evidence": [
+        {"tx_hash": "0xdef456", "block": 1000050, "detail": "Approved max uint256 of USDT to 0xbadc0de..."}
+      ],
+      "rule": "Approval amount >= 2**255 and spender is unverified/scam."
+    },
+    {
+      "signal_id": "fresh_wallet_pattern",
+      "severity": "medium",
+      "score": 0.75,
+      "chain": "base",
+      "title": "Fresh Wallet with High Activity",
+      "evidence": [
+        {"tx_hash": "0xghi789", "block": 5000, "detail": "First tx under 7 days ago with 12 distinct senders."}
+      ],
+      "rule": "First tx under 7 days ago AND at least 10 distinct incoming senders."
+    },
+    {
+      "signal_id": "risky_contract_interaction",
+      "severity": "high",
+      "score": 1.0,
+      "chain": "base",
+      "title": "Interaction with Risky Contract",
+      "evidence": [
+        {"tx_hash": "0xjkl012", "block": 5500, "detail": "Interacted with unverified/upgradeable proxy contract 0xunverified..."}
+      ],
+      "rule": "Counterparty contract flagged as unverified or risky."
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {"id": "0x1234567890123456789012345678901234567890", "label": "0x1234...7890", "type": "wallet"},
+      {"id": "0xdeadbeef", "label": "Scam Wallet", "type": "flagged_address"},
+      {"id": "0xbadc0de", "label": "Unverified Contract", "type": "risky_contract"}
+    ],
+    "edges": [
+      {"source": "0x1234567890123456789012345678901234567890", "target": "0xdeadbeef", "label": "Transferred"},
+      {"source": "0x1234567890123456789012345678901234567890", "target": "0xbadc0de", "label": "Approved"}
+    ]
+  },
+  "summary": "This wallet exhibits high-risk behavior across multiple chains. It has interacted with a known scam address and granted unlimited approval to an unverified contract. Additionally, it shows signs of being a fresh wallet with suspicious incoming activity. The safest next step is to immediately revoke any active token approvals using a tool like Revoke.cash.",
+  "history_truncated": false,
+  "warnings": [],
+  "generated_at": "2026-09-19T18:25:00Z",
+  "cache": {"hit": false, "saved_at": "2026-09-19T18:25:00Z"}
+}
