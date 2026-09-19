@@ -6,4 +6,4 @@
 - [x] Phase 3: Integration
 - [x] Phase 4: Frontend
 - [x] Phase 5: Evaluation
-- [ ] Phase 6: Hardening and docs
+- [x] Phase 6: Hardening and docs
