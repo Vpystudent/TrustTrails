@@ -76,9 +76,12 @@ function App() {
 
   return (
     <div className="container">
-      <header className="mb-4">
-        <h1>TrustTrail</h1>
-        <p className="label">Every risk flag comes with proof.</p>
+      <header className="mb-4 flex items-center gap-4">
+        <img src="/logo.png" alt="TrustTrail Logo" style={{ height: '64px', borderRadius: '12px', filter: 'invert(1) opacity(0.9)' }} />
+        <div>
+          <h1 style={{ marginBottom: 0 }}>TrustTrail</h1>
+          <p className="label" style={{ marginTop: '0.25rem' }}>Every risk flag comes with proof.</p>
+        </div>
       </header>
 
       <div className="card">
