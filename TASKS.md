@@ -5,5 +5,5 @@
 - [x] Phase 2: Labels + contract signals + scoring
 - [x] Phase 3: Integration
 - [x] Phase 4: Frontend
-- [ ] Phase 5: Evaluation
+- [x] Phase 5: Evaluation
 - [ ] Phase 6: Hardening and docs
